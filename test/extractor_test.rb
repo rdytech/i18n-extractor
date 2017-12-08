@@ -1,4 +1,4 @@
-require 'test_helper'
+require_relative 'test_helper'
 
 module Haml
   # really should just be part of integration_test.rb , testing shit from the orchestration class

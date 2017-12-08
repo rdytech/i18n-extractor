@@ -39,9 +39,13 @@ module Haml
           if value
             "\"#{value}\""
           else
-            line[:value][:attributes_hashes].map { |hash|
-              $1 if hash =~ /(?:\b#{attribute_name}\s*:|:#{attribute_name}\s*=>)\s*([^,]+)/
-            }.compact.first
+            if line[:value][:dynamic_attributes].old.to_s=~/(?:\b#{attribute_name}\s*:|:#{attribute_name}\s*=>)\s*([^,]+)/
+              $1
+            else
+              line[:value][:attributes].map { |hash|
+                $1 if hash =~ /(?:\b#{attribute_name}\s*:|:#{attribute_name}\s*=>)\s*([^,]+)/
+              }.compact.first
+            end
           end
         end
 

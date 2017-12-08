@@ -1,4 +1,4 @@
-require 'test_helper'
+require_relative 'test_helper'
 
 module Haml
   class HamlParserTest < Minitest::Test
@@ -10,7 +10,7 @@ module Haml
     def test_it_can_collect_metadata_about_lines
       tree = Haml::I18n::Extractor::HamlParser.new(@body)
       line_metadatas = tree.flattened_values
-      assert_equal line_metadatas.size, 2
+      assert_equal 2,line_metadatas.size
     end
 
     # easy api to use index <-> lineno
