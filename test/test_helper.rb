@@ -72,7 +72,7 @@ end
 ## project specific helpers ##
 ##############################
 
-require File.dirname(__FILE__) + "/../lib/" + 'haml-i18n-extractor'
+require File.dirname(__FILE__) + "/../lib/" + 'i18n-extractor'
 
 def file_path(name)
   File.dirname(__FILE__) + "/support/#{name}"
@@ -102,7 +102,7 @@ module TestHelper
         automate_user_interaction << "y"  # replace line
       end
     end
-    @workflow = Haml::I18n::Extractor::Workflow.new(TestHelper::PROJECT_DIR)
+    @workflow = I18n::Extractor::Workflow.new(TestHelper::PROJECT_DIR)
     with_highline(automate_user_interaction) do
       @workflow.run
     end
@@ -113,8 +113,8 @@ module TestHelper
   def self.hax_shit
     Dir.glob("*yml").map {|p| FileUtils.rm(p) } # HAX, TODO: handle with yaml files correctly (config/en.yml)
     Dir.glob("config/locales/*yml").map {|p| FileUtils.rm(p) } # HAX, TODO: handle with yaml files correctly (config/en.yml)
-    if File.exist?(Haml::I18n::Extractor::TaggingWriter::DB)
-      FileUtils.rm_rf(Haml::I18n::Extractor::TaggingWriter::DB) # HAX, TODO: setup/teardown
+    if File.exist?(I18n::Extractor::TaggingWriter::DB)
+      FileUtils.rm_rf(I18n::Extractor::TaggingWriter::DB) # HAX, TODO: setup/teardown
     end
   end
 

@@ -23,7 +23,7 @@ en:
     home:
       cdx:
         dev:
-          haml-i18n-extractor:
+          i18n-extractor:
             nested:
               dir:
                 nested-no-leading-underscore:

@@ -1,4 +1,4 @@
-# Haml::I18n::Extractor
+# I18n::Extractor
 
 Extract strings likely to be translated from haml templates for I18n translation. Replace the text, create yaml files, do all things you thought macros would solve, but didn't end up really saving THAT much time. Automate that pain away.
 
@@ -11,7 +11,7 @@ It doesn't translate already translated keys, or things it identfies that are no
 You can use the binary which has an interactive (prompting) and non-interactive mode included in this library. You should be able to use the code directly as a lib too.
 
 ## CLI usage
-Run haml-i18n-extractor GLOB_PATH_TO_HAML_FILES [OPTIONS]
+Run i18n-extractor GLOB_PATH_TO_HAML_FILES [OPTIONS]
 
 Options:
 
@@ -32,7 +32,7 @@ To achieve this, you need to specify two config variables:
 --add-filename-prefix true
 --base-path
 
-e.g. haml-i18n-extractor . --add-filename-prefix true --base-path /Users/jeremynagel/dev/some-project/views/
+e.g. i18n-extractor . --add-filename-prefix true --base-path /Users/jeremynagel/dev/some-project/views/
 
 Make sure that you use the absolute path for base-path and leave a trailing slash at the end otherwise the i18n tags will be missing a dot.
 
@@ -42,16 +42,16 @@ Make sure that you use the absolute path for base-path and leave a trailing slas
 
 <pre>
 begin
-  @ex1 = Haml::I18n::Extractor.new(haml_path)
+  @ex1 = I18n::Extractor.new(haml_path)
   @ex1.run
-rescue Haml::I18n::Extractor::InvalidSyntax
+rescue I18n::Extractor::InvalidSyntax
   puts "There was an error with #{haml_path}"
 end
 </pre>
 
 - Per-project basis, with the binary. See demo below for usage of the binary.
 
-`cd your-rails-app-to-translate && haml-i18n-extractor --help`
+`cd your-rails-app-to-translate && i18n-extractor --help`
 
 ## Example output
 
@@ -100,7 +100,7 @@ shai@comp $ cat /tmp/foo.haml
 
 running this:
 
-`shai@comp /tmp $ haml-i18n-extractor foo.haml -n -y en.yml`
+`shai@comp /tmp $ i18n-extractor foo.haml -n -y en.yml`
 
 Should give you the below...
 
@@ -171,18 +171,8 @@ en:
 
 ## Installation
 
-`gem install haml-i18n-extractor`
+`gem install i18n-extractor`
 
 If you want the latest code aka edge, you can also simply clone this repo and install the gem from the root of the repo:
 
-`gem uninstall -x haml-i18n-extractor; rm *gem; gem build *gemspec; gem install --local *gem`
-
-## Feedback
-
-Can use github issues to address any concern you have, or simply email me, with the contact info here: [http://shairosenfeld.com/](http://shairosenfeld.com/).
-
-You can also find me on twitter with the same username as my GH one.
-
-## Have an idea or an issue?
-
-Open an [issue](https://github.com/shaiguitar/haml-i18n-extractor/issues/new).
+`gem uninstall -x i18n-extractor; rm *gem; gem build *gemspec; gem install --local *gem`
