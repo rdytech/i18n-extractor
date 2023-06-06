@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
-require 'i18n-extractor'
+require 'haml-i18n-extractor'
 
 parser = Trollop::Parser.new do
-  version I18n::Extractor::VERSION
+  version Haml::I18n::Extractor::VERSION
   opt :interactive, "interactive mode"
   opt :yaml_file, "yaml file path, defaults to config/locales/en.yml", type: String
   opt :i18n_scope, "top level i18n scope, defaults to :en", type: String
@@ -11,6 +11,6 @@ parser = Trollop::Parser.new do
   opt :base_path, "Base path to HAML templates", type: String
 end
 
-I18n::Extractor::CLI.start(
+Haml::I18n::Extractor::CLI.start(
   File.expand_path( ARGV[0] ), parser.parse
 )

@@ -36,7 +36,7 @@ en:
     home:
       cdx:
         dev:
-          i18n-extractor:
+          haml-i18n-extractor:
             nested:
               dir:
                 nested_file:

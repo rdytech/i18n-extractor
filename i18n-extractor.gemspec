@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/i18n-extractor/version', __FILE__)
+require File.expand_path('../lib/haml-i18n-extractor/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["rdytech"]
@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "i18n-extractor"
   gem.require_paths = ["lib"]
-  gem.version       = I18n::Extractor::VERSION
+  gem.version       = Haml::I18n::Extractor::VERSION
 
   gem.add_dependency "tilt"
   gem.add_dependency "haml", ">=5"

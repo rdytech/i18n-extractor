@@ -1,24 +1,26 @@
 require 'test_helper'
 
-# misnomer, this is also testing UserAction
-class PrompterAndUserActionTest < Minitest::Test
+module Haml
+  # misnomer, this is also testing UserAction
+  class PrompterAndUserActionTest < Minitest::Test
 
-  def test_asks_to_process_line_yes
-    with_highline("y") do
-      assert_equal I18n::Extractor::Prompter.new.ask_user("orig", "replace").replace_line?, true
+    def test_asks_to_process_line_yes
+      with_highline("y") do
+        assert_equal Haml::I18n::Extractor::Prompter.new.ask_user("orig", "replace").replace_line?, true
+      end
     end
-  end
 
-  def test_asks_to_process_line_no
-    with_highline("n") do
-      assert_equal I18n::Extractor::Prompter.new.ask_user("orig", "replace").no_replace?, true
+    def test_asks_to_process_line_no
+      with_highline("n") do
+        assert_equal Haml::I18n::Extractor::Prompter.new.ask_user("orig", "replace").no_replace?, true
+      end
     end
-  end
 
-  def test_test_asks_to_process_line_tag
-    with_highline("t") do
-      assert_equal I18n::Extractor::Prompter.new.ask_user("orig", "replace").tag?, true
+    def test_test_asks_to_process_line_tag
+      with_highline("t") do
+        assert_equal Haml::I18n::Extractor::Prompter.new.ask_user("orig", "replace").tag?, true
+      end
     end
-  end
 
+  end
 end

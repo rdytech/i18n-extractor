@@ -1,49 +1,49 @@
 - content_for :title do
-  = [t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.admin'), t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.accounts'), t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.new')].compact.join(' - ')
+  = [t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.admin'), t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.accounts'), t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.new')].compact.join(' - ')
 .row
   .col-md-12
     %ul.breadcrumb
       %li
-        = link_to root_url(subdomain: t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.admin')) do
+        = link_to root_url(subdomain: t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.admin')) do
           %i.fa.fa-fw.fa-home
-          %span.text= t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.home')
+          %span.text= t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.home')
       %li
         = link_to admin_accounts_path do
           %i.fa.fa-fw.fa-globe
-          %span.text= t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.new_accounts')
+          %span.text= t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.new_accounts')
       %li.active=t('Create Account')
     %fieldset
-      = f.input :blah, label: t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.blah'), hint: t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.blabbloo')
+      = f.input :blah, label: t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.blah'), hint: t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.blabbloo')
 
 / main
 .content
   .main-header
-    %h2= t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.create_account')
+    %h2= t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.create_account')
   / main-content
   .main-content
     .row
       .col-md-12
-        = render t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.form')
+        = render t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.form')
 
-%span.text= t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.job_jobid_jobqueue', jobid: @job.id, jobqueue: @job.queue)
+%span.text= t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.job_jobid_jobqueue', jobid: @job.id, jobqueue: @job.queue)
 
 %p
-  %label{ for: 'fieldName' }= t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.name')
+  %label{ for: 'fieldName' }= t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.name')
   %br
   %input#fieldName{ name: 'cm-name', type: 'text' }
 
-%label{ for: 'fieldyhiddl' }= t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.phone_number')
+%label{ for: 'fieldyhiddl' }= t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.phone_number')
 
-= link_to t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.sign_up_for_energylink'), signup_path, class: 'btn btn-lg btn-success'
+= link_to t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.sign_up_for_energylink'), signup_path, class: 'btn btn-lg btn-success'
 
-%span.identifier= t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.userusername_useremail', userusername: user.username, useremail: user.email)
+%span.identifier= t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.userusername_useremail', userusername: user.username, useremail: user.email)
 -#
-%div= t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.the_software_is_provided_as_is_without_warranty_of_any_kind_e')
+%div= t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.the_software_is_provided_as_is_without_warranty_of_any_kind_e')
 -#
 -## Running the extractor tool when a yaml file already exists removes quotes from other keys....
 -#
-=t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.required')
+=t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.required')
 
-%p= t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.site_titles_job_electricity_profile', site_title: site_title)
+%p= t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.site_titles_job_electricity_profile', site_title: site_title)
 
-%div= t('.home.cdx.dev.i18n-extractor.nested.dir.nested_file.there_has_been_an_increase_in_load_during_out_of_hours_by_kw_', kw_increase: kw_increase, date: date, event_urlenergylink: event_url:EnergyLink, kw_increase: kw_increase, support_link_addressing_baseload: support_link: Addressing Baseload)
+%div= t('.home.cdx.dev.haml-i18n-extractor.nested.dir.nested_file.there_has_been_an_increase_in_load_during_out_of_hours_by_kw_', kw_increase: kw_increase, date: date, event_urlenergylink: event_url:EnergyLink, kw_increase: kw_increase, support_link_addressing_baseload: support_link: Addressing Baseload)

@@ -1,4 +1,4 @@
-class I18n::Extractor
+class Haml::I18n::Extractor
   class CLI
 
     class CliError < StandardError; end
@@ -17,13 +17,13 @@ class I18n::Extractor
     def initialize(path, options = {})
       @path = path
       @options = DEFAULT_OPTIONS.merge(options)
-      @prompter = I18n::Extractor::Prompter.new
+      @prompter = Haml::I18n::Extractor::Prompter.new
     end
 
     def start
       paths.each do |path|
         if File.exist?(path) && !File.directory?(path)
-          I18n::Extractor.run(path, options)
+          Haml::I18n::Extractor.run(path, options)
         end
       end
     end
@@ -37,7 +37,7 @@ class I18n::Extractor
         @paths ||= File.directory?(path) ? Dir[File.join(path,'**/*.haml')] : Dir[path]
       else
         @prompter.puts("You must supply a path.")
-        @prompter.puts("See i18n-extractor --help below:")
+        @prompter.puts("See haml-i18n-extractor --help below:")
         raise CliError
       end
     end
