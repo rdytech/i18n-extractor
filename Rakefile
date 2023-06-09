@@ -48,5 +48,5 @@ end
 
 # FIXME, jsut run this
 task :force_build_and_install do
-  %{ gem uninstall -x haml-i18n-extractor; rm *gem; gem build *gemspec; gem install --local *gem }
+  %{ gem uninstall -x i18n-extractor; rm *gem; gem build *gemspec; gem install --local *gem }
 end

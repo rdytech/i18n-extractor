@@ -2,18 +2,18 @@
 require File.expand_path('../lib/haml-i18n-extractor/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Shai Rosenfeld"]
-  gem.email         = ["shaiguitar@gmail.com"]
+  gem.authors       = ["rdytech"]
+  gem.email         = ""
   gem.description   = %q{Parse the texts out of the haml files into localization files}
   gem.summary       = %q{Parse the texts out of the haml files into localization files}
-  gem.homepage      = "https://github.com/shaiguitar/haml-i18n-extractor"
-  gem.executables = ['haml-i18n-extractor']
-  gem.default_executable = 'haml-i18n-extractor'
+  gem.homepage      = "https://github.com/rdytech/i18n-extractor"
+  gem.executables = ['i18n-extractor']
+  gem.default_executable = 'i18n-extractor'
   gem.license       = 'MIT'
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "haml-i18n-extractor"
+  gem.name          = "i18n-extractor"
   gem.require_paths = ["lib"]
   gem.version       = Haml::I18n::Extractor::VERSION
 
